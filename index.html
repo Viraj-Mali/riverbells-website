@@ -33,7 +33,7 @@
         <div class="nav-container">
             <a href="#hero" class="nav-logo">
                 <div class="logo-icon">
-                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="30" cy="30" r="29" stroke="currentColor" stroke-width="1.5" />
                         <path d="M30 12 L18 38 L42 38 Z" stroke="currentColor" stroke-width="1.5" fill="none" />
                         <path d="M24 38 L30 22 L36 38" stroke="currentColor" stroke-width="1" fill="none" />
@@ -86,9 +86,9 @@
             </div>
         </div>
         <div class="hero-slider-dots">
-            <button class="slider-dot active" data-slide="0"></button>
-            <button class="slider-dot" data-slide="1"></button>
-            <button class="slider-dot" data-slide="2"></button>
+            <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
         </div>
         <div class="hero-scroll">
             <div class="scroll-indicator">
@@ -102,7 +102,8 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image reveal-left">
-                    <img src="images/816608114.jpg" alt="Riverbells Resort grounds with glamping tents" loading="lazy">
+                    <img src="images/816608114.jpg" alt="Riverbells Resort grounds with glamping tents" loading="lazy"
+                        width="600" height="500">
                     <div class="about-badge">
                         <span class="badge-rating">★ 4.2</span>
                         <span class="badge-text">112 Reviews</span>
@@ -155,8 +156,8 @@
                 <!-- Glamping Tent -->
                 <div class="accommodation-card reveal-up">
                     <div class="card-image">
-                        <img src="images/816608256.jpg" alt="Luxury glamping tent interior at Riverbells"
-                            loading="lazy">
+                        <img src="images/816608256.jpg" alt="Luxury glamping tent interior at Riverbells" loading="lazy"
+                            width="400" height="260">
                         <div class="card-badge">Popular</div>
                     </div>
                     <div class="card-content">
@@ -183,7 +184,8 @@
                 <!-- Deluxe Cottage -->
                 <div class="accommodation-card reveal-up" style="animation-delay: 0.15s;">
                     <div class="card-image">
-                        <img src="images/816608149.jpg" alt="Deluxe cottage at Riverbells Resort" loading="lazy">
+                        <img src="images/816608149.jpg" alt="Deluxe cottage at Riverbells Resort" loading="lazy"
+                            width="400" height="260">
                         <div class="card-badge badge-alt">Garden View</div>
                     </div>
                     <div class="card-content">
@@ -210,7 +212,8 @@
                 <!-- Camping Tent -->
                 <div class="accommodation-card reveal-up" style="animation-delay: 0.3s;">
                     <div class="card-image">
-                        <img src="images/816608271.jpg" alt="Camping tents at Riverbells Resort" loading="lazy">
+                        <img src="images/816608271.jpg" alt="Camping tents at Riverbells Resort" loading="lazy"
+                            width="400" height="260">
                         <div class="card-badge badge-nature">Adventure</div>
                     </div>
                     <div class="card-content">
@@ -434,9 +437,9 @@
 
     <!-- ===================== GALLERY LIGHTBOX ===================== -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
-        <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
         <div class="lightbox-content">
             <img src="" alt="" id="lightboxImg">
             <p class="lightbox-caption" id="lightboxCaption"></p>
@@ -491,7 +494,8 @@
                     </div>
                 </div>
                 <div class="dining-image reveal-right">
-                    <img src="images/816608135.jpg" alt="Dining pavilion at Riverbells Resort" loading="lazy">
+                    <img src="images/816608135.jpg" alt="Dining pavilion at Riverbells Resort" loading="lazy"
+                        width="600" height="450">
                     <div class="dining-image-accent"></div>
                 </div>
             </div>
@@ -626,16 +630,24 @@
                     <h3>Send Us a Message</h3>
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="contactName" placeholder="Your Name" required>
+                            <label for="contactName" class="sr-only">Your Name</label>
+                            <input type="text" id="contactName" name="name" autocomplete="name" placeholder="Your Name…"
+                                required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+                            <label for="contactPhone" class="sr-only">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="phone" autocomplete="tel" inputmode="tel"
+                                placeholder="Phone Number…" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="contactEmail" placeholder="Email Address (Optional)">
+                            <label for="contactEmail" class="sr-only">Email Address</label>
+                            <input type="email" id="contactEmail" name="email" autocomplete="email" inputmode="email"
+                                spellcheck="false" placeholder="Email Address (Optional)…">
                         </div>
                         <div class="form-group">
-                            <textarea id="contactMessage" rows="4" placeholder="Your Message" required></textarea>
+                            <label for="contactMessage" class="sr-only">Your Message</label>
+                            <textarea id="contactMessage" name="message" rows="4" placeholder="Your Message…"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
                             <span>Send via WhatsApp</span>
@@ -721,7 +733,7 @@
     <!-- ===================== BOOKING MODAL ===================== -->
     <div class="modal-overlay" id="bookingModal">
         <div class="modal">
-            <button class="modal-close" id="modalClose">&times;</button>
+            <button class="modal-close" id="modalClose" aria-label="Close booking modal">&times;</button>
             <div class="modal-header">
                 <h2>Book Your Stay</h2>
                 <p>Fill in your details and we'll confirm via WhatsApp</p>
@@ -730,11 +742,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="bookName">Full Name *</label>
-                        <input type="text" id="bookName" required placeholder="Enter your name">
+                        <input type="text" id="bookName" name="name" autocomplete="name" required
+                            placeholder="Enter your name…">
                     </div>
                     <div class="form-group">
                         <label for="bookPhone">Phone Number *</label>
-                        <input type="tel" id="bookPhone" required placeholder="e.g. 9876543210">
+                        <input type="tel" id="bookPhone" name="phone" autocomplete="tel" inputmode="tel" required
+                            placeholder="e.g. 9876543210">
                     </div>
                 </div>
                 <div class="form-row">
